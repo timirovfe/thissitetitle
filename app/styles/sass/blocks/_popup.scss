@@ -1,0 +1,108 @@
+.popup__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000000CC;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s all;
+  z-index: 2;
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.5s all;
+  }
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  max-width: 400px;
+  width: 100%;
+  padding: 40px;
+  transition: 0.5s all;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  @include sm-block {
+    padding: 24px 20px;
+    height: 100%;
+  }
+
+  &.active {
+    transform: translate(-50%, -50%) scale(1);
+    transition: 0.5s all;
+  }
+
+  &__title {
+    font-size: 16px;
+    color: $black;
+    font-weight: 700;
+    margin-bottom: 32px;
+  }
+
+  &__input {
+    border: 2px solid $blue;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 19px 24px;
+    outline: none;
+    margin-bottom: 16px;
+
+    &::-webkit-input-placeholder {
+      color: $grey;
+    }
+
+    &:-moz-placeholder {
+      color: $grey;
+      opacity:  1;
+    }
+
+    &::-moz-placeholder {
+      color: $grey;
+      opacity:  1;
+    }
+
+    &:-ms-input-placeholder {
+      color: $grey;
+    }
+
+    &::-ms-input-placeholder {
+      color: $grey;
+    }
+
+    &::placeholder {
+      color: $grey;
+    }
+  }
+
+  &__btn {
+    margin: 8px 0 16px;
+    line-height: 32px;
+  }
+
+  &__link {
+    color: $dark-blue;
+    margin-bottom: 16px;
+    border-bottom: 1px dashed $dark-blue;
+    width: fit-content;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.close-popup {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  cursor: pointer;
+}

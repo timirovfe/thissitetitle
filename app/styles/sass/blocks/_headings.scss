@@ -1,0 +1,21 @@
+h1, .h1-title {
+  font-size: 36px;
+  line-height: 49px;
+  @include sm-block {
+    font-size: 20px;
+    line-height: 27px;
+  }
+}
+
+h2, .h2-title {
+  font-size: 25px;
+  @include sm-block {
+    font-size: 16px;
+  }
+}
+
+h1, h2, .h2-title, .h1-title {
+  color: $black;
+  font-weight: 600;
+  margin: 0;
+}
